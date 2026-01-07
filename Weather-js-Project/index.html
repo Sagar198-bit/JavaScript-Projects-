@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<title>Weather-App</title>
+</head>
+
+<body>
+    <section class="bg-[url('./bg.jpg')] min-h-screen bg-cover bg-center">
+        <div class="h-screen w-screen bg-black/50 flex justify-center items-center">
+            <div
+                class="sm:p-10 p-3 max-w-[500px] rounded min-h-[500px] flex flex-col bg-white/50   items-center gap-10 ">
+                <h1 class="sm:text-5xl text-4xl font-semibold text-white">Weather App</h1>
+                <div class=" text-white relative rounded">
+                    <input type="text" id="SearchCity"
+                        class="outline-none border rounded sm:py-2 py-1 sm:pr-40 pr-35 pl-2" placeholder="Search City">
+                    <i id="SearchBtn" class="fa-solid cursor-pointer fa-magnifying-glass absolute top-3 right-3"></i>
+                </div>
+
+                <div id="weather-container" class=" flex flex-col justify-center items-center space-y-10">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
