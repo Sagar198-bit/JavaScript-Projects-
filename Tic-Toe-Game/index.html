@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
+
+    <title>Tic-Toe-Game</title>
+    <style>
+        button {
+            height: 100px;
+            width: 100px;
+            background-color: lime;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 40px;
+            font-weight: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="tic-toe-container"
+        class="bg-[#9929EA] flex flex-col justify-center p-10 items-center min-h-screen w-full ">
+        <div class="w-[500px] h-[500px] p-3 flex gap-5 rounded items-center flex-col bg-[#000000]">
+            <h1 class="text-[#FAEB92] font-bold text-4xl">Tic Toe Game</h1>
+            <div id="btn-container"
+                class="w-full grid grid-cols-3 grid-rows-3 items-center justify-items-center min-h-[400px]">
+                <button id="0" type="submit"></button>
+                <button id="1" type="submit"></button>
+                <button id="2" type="submit"></button>
+                <button id="3" type="submit"></button>
+                <button id="4" type="submit"></button>
+                <button id="5" type="submit"></button>
+                <button id="6" type="submit"></button>
+                <button id="7" type="submit"></button>
+                <button id="8" type="submit"></button>
+            </div>
+            <h1 id="winner-anonunce-label" class="text-white mt-10 text-2xl font-bold"></h1>
+        </div>
+
+
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js" defer></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
