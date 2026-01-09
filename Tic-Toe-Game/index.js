@@ -1,8 +1,45 @@
-//Logic of tic-toe-game....
-
 const Arrayofvalue = new Array(9).fill(undefined);
-let BtnValue = true;
+let BtnValue = undefined;
 const buttonContainer = document.getElementById("btn-container");
+
+const playerchoice = document.getElementById("choose-symbol");
+
+playerchoice.addEventListener("click", function (event) {
+  const buttonX = document.getElementById("X");
+  const buttonO = document.getElementById("O");
+  const choosed = document.getElementById("choosed-Symbol");
+
+  console.log(event.target.id);
+
+  if (event.target.id === "X") {
+    BtnValue = true;
+    buttonX.disabled = true;
+
+    if (!buttonX.disabled) {
+      buttonX.disabled = true;
+    }
+
+    if (!buttonO.disabled) {
+      buttonO.disabled = true;
+    }
+
+    choosed.innerHTML = "";
+    choosed.innerHTML = `First Player choose ${event.target.innerHTML}`;
+  }
+  if (event.target.id === "O") {
+    BtnValue = false;
+    buttonX.disabled = true;
+    if (!buttonX.disabled) {
+      buttonX.disabled = true;
+    }
+
+    if (!buttonO.disabled) {
+      buttonO.disabled = true;
+    }
+    choosed.innerHTML = "";
+    choosed.innerHTML = `First Player choose ${event.target.innerHTML}`;
+  }
+});
 
 function Celebration() {
   const jsConfetti = new JSConfetti();
@@ -38,8 +75,8 @@ function checkWinner() {
       Arrayofvalue[1] === Arrayofvalue[2]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
-Congratulations Winner is ${Arrayofvalue[0]} 🎉 <button class="h-[10px] w-[50px]">Reset ?</button>`;
+      document.getElementById("anonunce-label").innerHTML = `
+Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       disableGameButtons();
     }
   }
@@ -53,8 +90,8 @@ Congratulations Winner is ${Arrayofvalue[0]} 🎉 <button class="h-[10px] w-[50p
       Arrayofvalue[4] === Arrayofvalue[5]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
-Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
+      document.getElementById("anonunce-label").innerHTML = `
+Congratulations Winner is ${Arrayofvalue[3]} 🎉`;
       disableGameButtons();
     }
   }
@@ -68,7 +105,7 @@ Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       Arrayofvalue[7] === Arrayofvalue[8]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[6]} 🎉`;
       disableGameButtons();
     }
@@ -83,7 +120,7 @@ Congratulations Winner is ${Arrayofvalue[6]} 🎉`;
       Arrayofvalue[3] === Arrayofvalue[6]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       disableGameButtons();
     }
@@ -98,7 +135,7 @@ Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       Arrayofvalue[4] === Arrayofvalue[7]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[1]} 🎉`;
       disableGameButtons();
     }
@@ -113,7 +150,7 @@ Congratulations Winner is ${Arrayofvalue[1]} 🎉`;
       Arrayofvalue[5] === Arrayofvalue[8]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[2]} 🎉`;
       disableGameButtons();
     }
@@ -128,7 +165,7 @@ Congratulations Winner is ${Arrayofvalue[2]} 🎉`;
       Arrayofvalue[4] === Arrayofvalue[8]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       disableGameButtons();
     }
@@ -143,7 +180,7 @@ Congratulations Winner is ${Arrayofvalue[0]} 🎉`;
       Arrayofvalue[4] === Arrayofvalue[6]
     ) {
       Celebration();
-      document.getElementById("winner-anonunce-label").innerHTML = `
+      document.getElementById("anonunce-label").innerHTML = `
 Congratulations Winner is ${Arrayofvalue[2]} 🎉`;
       disableGameButtons();
     }
@@ -160,7 +197,7 @@ Congratulations Winner is ${Arrayofvalue[2]} 🎉`;
     Arrayofvalue[8] !== undefined
   ) {
     document.getElementById(
-      "winner-anonunce-label"
+      "anonunce-label"
     ).innerHTML = `Game has been Tie Please Try Again !!`;
     disableGameButtons();
   }
@@ -173,7 +210,7 @@ buttonContainer.addEventListener("click", function (event) {
   }
   const button = document.getElementById(event.target.id);
 
-  if (BtnValue) {
+  if (BtnValue === true) {
     if ((button.innerHTML === "X") | (button.innerHTML === "O")) {
       return;
     } else {
@@ -182,7 +219,8 @@ buttonContainer.addEventListener("click", function (event) {
       BtnValue = false;
       checkWinner();
     }
-  } else {
+  }
+  if (BtnValue === false) {
     if ((button.innerHTML === "X") | (button.innerHTML === "O")) {
       return;
     } else {
@@ -192,6 +230,4 @@ buttonContainer.addEventListener("click", function (event) {
       checkWinner();
     }
   }
-
-  // invoking the function.....
 });

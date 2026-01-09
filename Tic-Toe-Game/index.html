@@ -22,24 +22,73 @@
 
 <body>
     <section id="tic-toe-container"
-        class="bg-[#9929EA] flex flex-col justify-center p-10 items-center min-h-screen w-full ">
-        <div class="w-[500px] h-[500px] p-3 flex gap-5 rounded items-center flex-col bg-[#000000]">
-            <h1 class="text-[#FAEB92] font-bold text-4xl">Tic Toe Game</h1>
+        class="bg-[#9929EA] flex flex-col lg:flex-row  gap-10 lg:justify-evenly  items-center  min-h-screen w-full ">
+        <div class="min-w-[500px] min-h-[500px] p-3 flex gap-5 rounded-2xl items-center flex-col bg-white shadow-xl">
+            <h1 class="text-[#000000] font-bold text-4xl">Tic Toe Game</h1>
             <div id="btn-container"
                 class="w-full grid grid-cols-3 grid-rows-3 items-center justify-items-center min-h-[400px]">
-                <button id="0" type="submit"></button>
-                <button id="1" type="submit"></button>
-                <button id="2" type="submit"></button>
-                <button id="3" type="submit"></button>
-                <button id="4" type="submit"></button>
-                <button id="5" type="submit"></button>
-                <button id="6" type="submit"></button>
-                <button id="7" type="submit"></button>
-                <button id="8" type="submit"></button>
+                <button id="0" type="button" class="w-20 h-20 border-2 border-gray-300 
+         hover:border-indigo-500 hover:shadow-2xl
+         transition duration-300 ease-in-out text-3xl font-bold">
+                </button>
+
+                <button id="1" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="2" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="3" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="4" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="5" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="6" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="7" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
+                <button id="8" type="button"
+                    class="w-20 h-20 border-2 border-gray-300 hover:border-indigo-500 hover:shadow-2xl transition duration-300 ease-in-out text-3xl font-bold"></button>
+
             </div>
-            <h1 id="winner-anonunce-label" class="text-white mt-10 text-2xl font-bold"></h1>
+            <h1 id="anonunce-label" class="text-white mt-10 text-2xl font-bold"></h1>
         </div>
 
+
+        <div class="lg:min-h-screen flex lg:items-center justify-center ">
+            <div class="bg-[#ffffff] w-80 p-6 rounded-2xl  text-center">
+
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">
+                    Choose One
+                </h1>
+
+                <div id="choose-symbol" class="flex justify-center gap-6">
+
+                    <button id="X" class="w-20 h-20 text-4xl font-bold rounded-xl border-2 border-gray-300 
+              hover:text-white hover:border-indigo-500
+               transition duration-300 ease-in-out">
+                        X
+                    </button>
+
+
+                    <button id="O" class="w-20 h-20 text-4xl font-bold rounded-xl border-2 border-gray-300 
+               hover:text-white hover:border-indigo-500
+               transition duration-300 ease-in-out">
+                        O
+                    </button>
+                </div>
+
+                <p id="choosed-Symbol" class="text-sm text-gray-500 font-semibold mt-6">
+                    Select your symbol to start the game
+                </p>
+            </div>
+        </div>
 
 
     </section>
