@@ -17,20 +17,22 @@ AddButton.addEventListener("click", function () {
       Todos.push({ todo: taskValue, id: Date.now(), status: false });
     }
   }
-
   //Rendering Todos....
   renderTodos();
-
   taskInput.value = "";
-
-  console.log(Todos);
 });
 
 function deleteTodo(id) {
-  const filteredTodos = Todos.filter((eachTodos) => eachTodos.id !== id);
-  Todos.length = 0;
-  Todos = filteredTodos;
-  renderTodos();
+  const checkbox = document.getElementById(`check-${id}`);
+
+  if (checkbox.checked) {
+    const filteredTodos = Todos.filter((eachTodos) => eachTodos.id !== id);
+    Todos.length = 0;
+    Todos = filteredTodos;
+    renderTodos();
+  } else {
+    alert("is checkbox tick ?");
+  }
 } //Deleting Todos....
 
 function editTodo(id) {
@@ -48,7 +50,8 @@ function editTodo(id) {
       return eachTodo.id === id ? { ...eachTodo, todo: input.value } : eachTodo;
     });
   }
-} //Edit Todos Functionlity.....
+} 
+//Edit Todos Functionlity.....
 
 const taskdone = (id) => {
   const checkbox = document.getElementById(`check-${id}`);
@@ -59,7 +62,8 @@ const taskdone = (id) => {
   } else {
     input.classList.remove("line-through", "text-gray-400");
   }
-}; //Taksdone Functionlity....
+}; 
+//Taksdone Functionlity....
 
 //Rendering Todos.....
 function renderTodos() {
