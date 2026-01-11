@@ -27,9 +27,33 @@ numbers_button.addEventListener("click", function (event) {
     return;
   }
 
-  document.getElementById(
-    "digits_operands"
-  ).innerHTML += `${event.target.innerHTML}`;
+  const signs = ["+", "-", "*", "/", "%"];
+
+  let display = document.getElementById("digits_operands").innerHTML;
+  if (signs.includes(event.target.innerHTML)) {
+    if (display.length === 0) {
+      return;
+    }
+
+    if (signs.includes(display.at(-1))) {
+      return;
+    }
+
+    display += event.target.innerHTML;
+  }
+
+  if (
+    event.target.innerHTML !== "+" ||
+    event.target.innerHTML !== "-" ||
+    event.target.innerHTML !== "%" ||
+    event.target.innerHTML !== "/" ||
+    event.target.innerHTML !== "%" ||
+    event.target.innerHTML !== "*"
+  ) {
+    document.getElementById(
+      "digits_operands"
+    ).innerHTML += `${event.target.innerHTML}`;
+  }
 });
 
 // Total Functionlity.....
