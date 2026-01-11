@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>calculator</title>
+    <style>
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class=" flex justify-center  box-border items-center min-h-screen">
+
+        <div class=" bg-black text-white space-y-5 min-h-[300px] rounded w-[400px] p-3">
+            <div class="w-full">
+
+                <h1 class="text-2xl uppercase font-semibold">calculator</h1>
+
+            </div>
+
+            <div id="showCalculation"
+                class="min-h-[150px] flex justify-end gap-1 items-end font-semibold text-3xl p-5 bg-blue-500 rounded w-full">
+            <p class="" id="digits_operands"></p>
+            </div>
+
+            <div class="bg-sky-900 rounded">
+                <div id="calculator-btn" class="grid gap-4 grid-rows-5 p-5 grid-cols-4">
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">AC</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">C</button>
+                    <button class="w-16 h-16 rounded-full  text-2xl bg-white font-semibold text-black">%</button>
+                    <button class="w-16 h-16 rounded-full  text-2xl bg-white font-semibold text-black">/</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">7</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">8</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">9</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">*</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">4</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">5</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">6</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">-</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">1</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">2</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">3</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">+</button>
+                    <button
+                        class="w-full h-16 rounded-full text-2xl col-span-2 font-semibold bg-white text-black">0</button>
+                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">.</button>
+                    <button id="Total_calculation" class="w-16 h-16 rounded-full text-2xl bg-white  font-semibold text-black">=</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
