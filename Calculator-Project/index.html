@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>calculator</title>
     <style>
-        button{
+        button {
             cursor: pointer;
         }
     </style>
@@ -24,14 +24,15 @@
             </div>
 
             <div id="showCalculation"
-                class="min-h-[150px] flex justify-end gap-1 items-end font-semibold text-3xl p-5 bg-blue-500 rounded w-full">
-            <p class="" id="digits_operands"></p>
+                class="min-h-[150px] flex flex-col justify-end gap-1 items-end font-semibold text-3xl p-5 bg-blue-500 rounded w-full">
+                <p id="digits_operands"></p>
+                <p id="Total" class="self-start"></p>
             </div>
 
             <div class="bg-sky-900 rounded">
                 <div id="calculator-btn" class="grid gap-4 grid-rows-5 p-5 grid-cols-4">
-                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">AC</button>
-                    <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">C</button>
+                    <button id="All_Clear" class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">AC</button>
+                    <button id="clear" class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">C</button>
                     <button class="w-16 h-16 rounded-full  text-2xl bg-white font-semibold text-black">%</button>
                     <button class="w-16 h-16 rounded-full  text-2xl bg-white font-semibold text-black">/</button>
                     <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">7</button>
@@ -49,7 +50,8 @@
                     <button
                         class="w-full h-16 rounded-full text-2xl col-span-2 font-semibold bg-white text-black">0</button>
                     <button class="w-16 h-16 rounded-full text-2xl bg-white font-semibold text-black">.</button>
-                    <button id="Total_calculation" class="w-16 h-16 rounded-full text-2xl bg-white  font-semibold text-black">=</button>
+                    <button id="Total_calculation"
+                        class="w-16 h-16 rounded-full text-2xl bg-white  font-semibold text-black">=</button>
                 </div>
             </div>
         </div>
